@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>ChatGPT API Chat</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <div id="chatid" class="top-fixed form-style">
+            チャット名：<input type="text" id="chatid_input">
+            <button id="btn_newchat">new chat</button>
+            <button id="btn_clearchat">clear chat</button>
+            &nbsp; audio <div id="audioToggle" class="toggle">
+                <input type="checkbox" id="audioOn" name="audioOn" />
+            </div>
+            <select id="audioCredit">
+                <option value="8" selected>VOICEVOX:春日部つむぎ</option>
+                <option value="24">VOICEVOX:WhiteCUL（たのしい）</option>
+            </select>
+            <audio src=""></audio>
+            <button id="btn_voiceRec">voice REC</button>
+        </div>
+        <div id="contents_field" class="scrollable-content"></div>
+        <div id="inputbox" class="bottom-fixed form-style">
+            <div class="container">
+                <textarea id="content_input"></textarea>
+                <div id="btn_submit" class="div-button">
+                    <span class="fa-regular fa-comment button-icon"></span>
+                    <span class="button-text">submit</span>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='chatgpt.js') }}"></script>
+    <script src="https://kit.fontawesome.com/00a14eb7c5.js" crossorigin="anonymous"></script>
+</html>

@@ -1,0 +1,6 @@
+
+*.db
+*.pyc
+venv
+flaskr/static/.DS_Store
+.DS_Store

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>ChatGPT API Chat</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <h1>テスト画面です！</h1>
+        <form action="{{ url_for('register') }}" method="post">
+            <table border="1">
+                <tr>
+                    <th>入荷日</th>
+                    <th>タイトル</th>
+                    <th>価格</th>
+                </tr>
+                <tr>
+                    <td><input type="text" name="arrival_day"></td>
+                    <td><input type="text" name="title"></td>
+                    <td><input type="text" name="price"></td>
+                </tr>
+            </table>
+            <br>
+            <input type="submit" value="登録">
+        </form>
+    </body>
+</html>
