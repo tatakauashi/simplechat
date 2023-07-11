@@ -23,10 +23,12 @@ pip freeze > requirements.txt
 ```
 
 ### Preparing DB
+```
 sqlite3 instance/database.db  
 BEGIN TRANSACTION;  
 CREATE TABLE IF NOT EXISTS chat_history (seq INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, chat_id TEXT, role TEXT, content TEXT);  
 COMMIT;  
+```
 
 ### Voice Environment (Optional)
 Install and Run VOICEVOX  
@@ -38,34 +40,50 @@ Edit flaskr/config.py
 ### How to run Flask
 #### Prepare
 ##### Mac (Bash/zsh)
+```
 source ./venv/bin/activate  
 export FLASK_APP=flaskr  
 export FLASK_ENV=development  
+```
 
 ##### Windows
+```
 .\venv\Scripts\activate.bat  
 set FLASK_APP=flaskr  
 set FLASK_ENV=development  
+```
 
 ##### PowerShell (Windows)
+```
 .\venv\Scro@ts\Activate.ps1  
 $env:FLASK_APP="flaskr"  
 $env:FLASK_ENV="development"  
+```
 
 #### Set Open API Key
 ##### Mac (Bash/zsh)
+```
 export OPENAI_API_KEY="OpenAIのAPIキー"  
+```
 
 ##### Windows
+```
 set OPENAI_API_KEY="OpenAIのAPIキー"  
+```
 
 ##### PowerShell (Windows)
+```
 $env:OPENAI_API_KEY="OpenAIのAPIキー"  
+```
 
 #### Run
+```
 flask run  
+```
 or  
+```
 flask run --port=5505  
+```
 *\*On a Mac, it's likely that Flask's default port might be in use, so we recommend specifying a port.*　　
 
 ## Reference Links
