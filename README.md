@@ -2,16 +2,38 @@
 Simple Chat Web Application by Flask with ChatGPT API.
 
 ## How to setup & run 'simplechat'
+
+### Python for Mac
+```
+use brew -> pyenv  
+```
+https://prog-8.com/docs/python-env
+
+### Set up venv
+```
 python -m venv venv  
 source ./venv/bin/activate  
 pip install -r requirements.txt
+```
+*\*including install openai library.*
 
-### How to upgrade requirements.txt
+#### How to upgrade requirements.txt
+```
 pip freeze > requirements.txt  
+```
 
-### Python for Mac
-use brew -> pyenv  
-https://prog-8.com/docs/python-env
+### Preparing DB
+sqlite3 instance/database.db  
+BEGIN TRANSACTION;  
+CREATE TABLE IF NOT EXISTS chat_history (seq INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, chat_id TEXT, role TEXT, content TEXT);  
+COMMIT;  
+
+### Voice Environment (Optional)
+Install and Run VOICEVOX  
+https://voicevox.hiroshiba.jp/  
+
+### config.py settings
+Edit flaskr/config.py
 
 ### How to run Flask
 #### Prepare
@@ -30,15 +52,7 @@ set FLASK_ENV=development
 $env:FLASK_APP="flaskr"  
 $env:FLASK_ENV="development"  
 
-#### Run
-flask run  
-or  
-flask run --port=5505  
-*\*On a Mac, it's likely that Flask's default port might be in use, so we recommend specifying a port.*　　
-
-### How to prepare to use ChatGPT
-pip install openai  
-
+#### Set Open API Key
 ##### Mac (Bash/zsh)
 export OPENAI_API_KEY="OpenAIのAPIキー"  
 
@@ -48,18 +62,11 @@ set OPENAI_API_KEY="OpenAIのAPIキー"
 ##### PowerShell (Windows)
 $env:OPENAI_API_KEY="OpenAIのAPIキー"  
 
-### Preparing DB
-sqlite3 instance/database.db  
-BEGIN TRANSACTION;  
-CREATE TABLE IF NOT EXISTS chat_history (seq INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, chat_id TEXT, role TEXT, content TEXT);  
-COMMIT;  
-
-#### OR 
-run flakr and access /setup .
-
-### Voice Environment
-Install and Run VOICEVOX  
-https://voicevox.hiroshiba.jp/  
+#### Run
+flask run  
+or  
+flask run --port=5505  
+*\*On a Mac, it's likely that Flask's default port might be in use, so we recommend specifying a port.*　　
 
 ## Reference Links
 【PythonでWebアプリ作成】Flask入門 ！この動画１本でWebアプリが作れちゃう！ 〜 Pythonプログラミング初心者用 〜  

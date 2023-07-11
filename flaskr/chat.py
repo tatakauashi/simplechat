@@ -11,6 +11,8 @@ def chat():
     content = data['content']
     audioOn = data['audioOn']
     speaker = data['speaker']
+    if not is_positive_integer(speaker):
+        speaker = "08"
 
     systemPrompt = ''
     audioFileName = 'c-' + chat_id + '-audio.wav'
@@ -117,4 +119,4 @@ def setup():
     return redirect(url_for('index'))
 
 def is_positive_integer(s):
-    return s.isdigit() and int(s) <= 1000
+    return s.isdigit() and len(s) <= 6
